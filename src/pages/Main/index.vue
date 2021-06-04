@@ -20,7 +20,7 @@
           {{props.row.role}}
         </q-td>
         <q-td key="action" :props="props">
-          <q-btn>Action</q-btn>
+          <q-btn outline rounded>Action</q-btn>
         </q-td>
       </q-tr>
     </q-table>
