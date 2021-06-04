@@ -10,6 +10,7 @@
           Title
         </q-toolbar-title>
         <q-btn @click="$router.push('/login')" flat round dense icon="logout" />
+        <q-btn @click="$q.dark.toggle()" flat round dense icon="nightlight_round" />
       </q-toolbar>
     </q-header>
     <q-drawer
