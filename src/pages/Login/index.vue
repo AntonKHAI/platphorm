@@ -48,10 +48,12 @@ export default {
         if (success) {
           this.login({ email: this.email, password: this.password }).then(() => {
             this.$router.push('/')
+          }).catch((err) => {
+            this.$q.notify({ message: `${err}`, type: 'negative', })
           })
         }
         else {
-          console.log('errrrr')
+          this.$q.notify({ message: 'errrrr' })
         }
       })
     },

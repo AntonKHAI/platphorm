@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { Notify } from 'quasar'
 
 const apiClient = axios.create({
   baseURL: process.env.VUE_APP_API_BASE_URL,
@@ -12,6 +13,9 @@ apiClient.interceptors.request.use(config => {
 
 apiClient.interceptors.response.use(res => {
   if (res.data && !res.data.status && res.data.data === null) {
+    Notify.create({
+      message: 'API REQUEST ERROR'
+    })
     throw new Error('API REQUEST ERROR')
   }
   return res.data
